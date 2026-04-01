@@ -1,0 +1,5 @@
+.env
+.env.*
+!.env.example
+bun.lockb
+node_modules
