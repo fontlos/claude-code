@@ -1,5 +1,7 @@
 # Claude Code
 
+<p align="right"><a href="./Readme.md">English</a> | <strong>中文</strong></p>
+
 基于 [NanmiCoder/claude-code-haha](https://github.com/NanmiCoder/claude-code-haha) 修复的**本地可运行版本**, 支持接入任意 Anthropic 兼容 API
 
 ## 功能
