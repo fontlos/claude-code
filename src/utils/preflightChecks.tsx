@@ -20,31 +20,36 @@ async function checkEndpoints(): Promise<PreflightCheckResult> {
     const tokenUrl = new URL(oauthConfig.TOKEN_URL);
     const endpoints = [`${oauthConfig.BASE_API_URL}/api/hello`, `${tokenUrl.origin}/v1/oauth/hello`];
     const checkEndpoint = async (url: string): Promise<PreflightCheckResult> => {
-      try {
-        const response = await axios.get(url, {
-          headers: {
-            'User-Agent': getUserAgent()
-          }
-        });
-        if (response.status !== 200) {
-          const hostname = new URL(url).hostname;
-          return {
-            success: false,
-            error: `Failed to connect to ${hostname}: Status ${response.status}`
-          };
-        }
-        return {
-          success: true
-        };
-      } catch (error) {
-        const hostname = new URL(url).hostname;
-        const sslHint = getSSLErrorHint(error);
-        return {
-          success: false,
-          error: `Failed to connect to ${hostname}: ${error instanceof Error ? (error as ErrnoException).code || error.message : String(error)}`,
-          sslHint: sslHint ?? undefined
-        };
-      }
+      // try {
+      //   const response = await axios.get(url, {
+      //     headers: {
+      //       'User-Agent': getUserAgent()
+      //     }
+      //   });
+      //   if (response.status !== 200) {
+      //     const hostname = new URL(url).hostname;
+      //     return {
+      //       success: false,
+      //       error: `Failed to connect to ${hostname}: Status ${response.status}`
+      //     };
+      //   }
+      //   return {
+      //     success: true
+      //   };
+      // } catch (error) {
+      //   const hostname = new URL(url).hostname;
+      //   const sslHint = getSSLErrorHint(error);
+      //   return {
+      //     success: false,
+      //     error: `Failed to connect to ${hostname}: ${error instanceof Error ? (error as ErrnoException).code || error.message : String(error)}`,
+      //     sslHint: sslHint ?? undefined
+      //   };
+      // }
+
+      // Remove this can use normal LLM API
+      return {
+        success: true
+      };
     };
     const results = await Promise.all(endpoints.map(checkEndpoint));
     const failedResult = results.find(result => !result.success);
