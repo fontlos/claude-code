@@ -19,6 +19,7 @@
     },
     "types": [
       "bun-types"
-    ]
+    ],
+    "noEmit": true
   }
 }

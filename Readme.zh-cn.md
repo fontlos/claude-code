@@ -79,18 +79,19 @@ CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 DISABLE_TELEMETRY=1
 ```
 
-### 4. 使用
+### 4. 运行
 
 > Windows 环境需要 Bash 运行命令, 因此需要安装 [Git for Windows](https://git-scm.com/download/win) 或其他 Bash
 > 部分功能 (语音输入, Computer Use, Sandbox 隔离等) 在 Windows 上不可用, 不影响核心 TUI 交互
 
 ```bash
+# 基本使用
 # MacOS / Linux
 ./bin/claude
 # Windows
 ./bin/claude.bat
 
-# 命令示例
+# 其他命令
 
 # 交互 TUI 模式 (完整界面)
 ./bin/claude
@@ -101,6 +102,21 @@ echo "explain this code" | ./bin/claude -p
 # 查看所有选项
 ./bin/claude --help
 ```
+
+### 5. 全局安装 (推荐)
+
+```bash
+bun link
+
+# 配置环境变量
+# (创建 ~/.claude/.env (MacOS / Linux) 或 %USERPROFILE%\.claude\.env (Windows))
+# 内容参考 .env.example
+
+# 验证安装
+claude --help
+```
+
+After global installation, use `claude` command in any directory
 
 ## 泄露源码的修复
 

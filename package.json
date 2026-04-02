@@ -4,11 +4,10 @@
   "private": true,
   "type": "module",
   "bin": {
-    "claude": "./bin/claude"
+    "claude": "./bin/claude.js"
   },
   "scripts": {
-    "claude": "bun run ./bin/claude",
-    "start": "bun run ./bin/claude"
+    "claude": "bun run ./bin/claude.js"
   },
   "dependencies": {
     "@anthropic-ai/sandbox-runtime": "^0.0.44",
@@ -73,5 +72,8 @@
     "xss": "^1.0.15",
     "yaml": "^2.8.3",
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "bun-types": "^1.3.11"
   }
 }

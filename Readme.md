@@ -79,7 +79,7 @@ CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 DISABLE_TELEMETRY=1
 ```
 
-### 4. Usage
+### 4. Run
 
 > Windows environment requires Bash to run commands, so you need to install [Git for Windows](https://git-scm.com/download/win) or another Bash
 > Some features (voice input, Computer Use, Sandbox isolation, etc.) are not available on Windows, but the core TUI interaction remains functional
@@ -101,6 +101,21 @@ echo "explain this code" | ./bin/claude -p
 # View all options
 ./bin/claude --help
 ```
+
+### 5. Global Installation (Recommended)
+
+```bash
+bun link
+
+# Configure environment variables
+# (create ~/.claude/.env (MacOS / Linux) or %USERPROFILE%\.claude\.env (Windows))
+# Content reference .env.example
+
+# Verify installation
+claude --help
+```
+
+After global installation, use `claude` command in any directory
 
 ## Fixes for the Leaked Source Code
 
